@@ -1,0 +1,6 @@
+<mat-list role="list">
+    @for (comic of comicsCollection; track $index)
+    {
+    <mat-list-item routerLink="/detail" role="listitem">{{comic}}</mat-list-item>
+    }
+</mat-list>
