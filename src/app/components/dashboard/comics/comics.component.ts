@@ -27,7 +27,13 @@ export class ComicsComponent implements OnInit {
     })
   }
 
-  public getImg() { }
+  public generatePathImage(thumbnail: any): string {
+    console.log('gene image', thumbnail);
+    if(thumbnail) {
+      return thumbnail.path + '.' +thumbnail.extension
+    }
+    return "";
+  }
 
   public navegationToDetail() {
     this.router.navigate(['/detail'])

@@ -10,6 +10,6 @@ export class DataManagementService {
   constructor(protected rest: RestService) { }
 
   public getFindAll(path: string, params?: any): Observable<any> {
-    return this.rest.getAll(path);
+    return this.rest.getAll(path, params);
   }
 }

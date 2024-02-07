@@ -3,7 +3,7 @@
     {
     <mat-grid-tile>
         <mat-card>
-            <img mat-card-image>
+            <img mat-card-image [src]="generatePathImage(comic.thumbnail)" >
             <mat-card-content>
                 <p>{{ comic.id}}</p>
             </mat-card-content>
