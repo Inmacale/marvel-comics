@@ -1,21 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataManagementService } from '../../../service/data-management.service';
 
 @Component({
   selector: 'app-comics',
   templateUrl: './comics.component.html',
   styleUrl: './comics.component.css'
 })
-export class ComicsComponent {
+export class ComicsComponent implements OnInit {
 
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, protected dataMangamente: DataManagementService) { }
 
-  comics = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+  comics: any[] = []
+
+  public ngOnInit(): void {
+    this.getComics();
+  }
 
   public navegationToDetail() {
     this.router.navigate(['/detail'])
   }
 
+  public getComics() {
+    this.dataMangamente.getFindAll("");
+  }
 
 }
