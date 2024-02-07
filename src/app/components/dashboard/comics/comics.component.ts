@@ -18,12 +18,19 @@ export class ComicsComponent implements OnInit {
     this.getComics();
   }
 
-  public navegationToDetail() {
-    this.router.navigate(['/detail'])
-  }
 
   public getComics() {
-    this.dataMangamente.getFindAll("");
+
+    this.dataMangamente.getFindAll("").subscribe((res: any) => {
+      console.log(res.data.results)
+      this.comics = res.data.results;
+    })
+  }
+
+  public getImg() { }
+
+  public navegationToDetail() {
+    this.router.navigate(['/detail'])
   }
 
 }
